@@ -1,11 +1,9 @@
-function print(n, currentValue){
-
-    if(currentValue > 10){
+function print(num){
+    if(num < 1){
         return;
     }
-
-    console.log(currentValue);
-    print(n, currentValue + 1)
+    console.log(num);
+    print(num-1);
 }
 
-print(10, 1);
+print(5);
