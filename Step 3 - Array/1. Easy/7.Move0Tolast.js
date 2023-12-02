@@ -1,20 +1,17 @@
-function bubbleSort(arr){
-
+function moveZeroToLastPos(arr){
     if(arr.length < 1){
         return -1;
     }
 
     for(let i = 0; i < arr.length; i++){
-        for(let j = 0; j < arr.length - i - 1; j++){
-            if(arr[j] > arr[j+1]){
-                swap(arr, arr[j], arr[j+1]);
+        for(let j = i + 1; j < arr.length - i; j++){
+            if(arr[j] == 0){
+                swap(arr, arr[i] , 0)
             }
-
         }
-        
     }
+
     return arr;
- 
 }
 
 function swap(arr, first, second){
@@ -23,6 +20,6 @@ function swap(arr, first, second){
     arr[second] = temp;
 }
 
-const arr = [0, 9, 2, 5, 7 ,3];
-let ans = bubbleSort(arr);
+let arr = [2, 4, 0, 6, 0, 9]
+let ans = moveZeroToLastPos(arr);
 console.log(ans);
